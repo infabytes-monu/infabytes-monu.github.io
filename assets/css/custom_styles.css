@@ -1,0 +1,87 @@
+.widget.widget-tile
+{
+    position: relative !important;
+    table-layout: unset !important;
+    padding-bottom: 5px;
+}
+
+.widget.has-heading
+{
+    margin-top: 22px;
+}
+
+
+.widget-heading-block
+{
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    background: #4285f4;
+    color: white;
+    
+    width: 100%;
+    padding: 5px 10px;
+    
+}
+
+.widget-img
+{
+    min-height: 45px;
+}
+
+.widget-img img
+{
+    width: 100%;
+}
+
+.widget.widget-tile .data-info {
+    display: unset !important;
+    text-align: unset !important;
+}
+
+.widget.widget-tile .data-info .value
+{
+    margin-bottom: 0px;
+}
+
+.widget.widget-tile .data-info .desc {
+    
+    line-height: 22px;
+    text-align: left;
+    padding: 0px 0px 0px 25px;
+}
+
+.widget.widget-tile .data-info .indicator {
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.widget.widget-tile .data-info .value {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.orange-heading
+{
+    background: #e8b236;
+}
+
+.green-heading
+{
+    background: #34A853;
+}
+
+.widget.widget-tile.pressure-widget .data-info .value
+{
+    margin-bottom: 1px;
+}
+
+.red-heading
+{
+    background: #EA4335;
+}
+
+.pump-rpm-section
+{
+    margin-bottom: 50px;
+}
