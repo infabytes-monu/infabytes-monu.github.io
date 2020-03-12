@@ -158,3 +158,13 @@
     font-size: 15px;
     font-weight: bold;
 }
+
+.pl-15
+{
+    padding-left: 15px !important;
+}
+
+.pt-15
+{
+    padding-top: 15px !important;
+}
