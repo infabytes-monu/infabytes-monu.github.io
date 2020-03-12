@@ -1,356 +1,168 @@
-var colors = Highcharts.getOptions().colors,
-    categories = [
-        'Chrome',
-        'Firefox',
-        'Internet Explorer',
-        'Safari',
-        'Edge',
-        'Opera',
-        'Other'
-    ],
-    data = [
-        {
-            y: 62.74,
-            color: colors[2],
-            drilldown: {
-                name: 'Chrome',
-                categories: [
-                    'Chrome v65.0',
-                    'Chrome v64.0',
-                    'Chrome v63.0',
-                    'Chrome v62.0',
-                    'Chrome v61.0',
-                    'Chrome v60.0',
-                    'Chrome v59.0',
-                    'Chrome v58.0',
-                    'Chrome v57.0',
-                    'Chrome v56.0',
-                    'Chrome v55.0',
-                    'Chrome v54.0',
-                    'Chrome v51.0',
-                    'Chrome v49.0',
-                    'Chrome v48.0',
-                    'Chrome v47.0',
-                    'Chrome v43.0',
-                    'Chrome v29.0'
-                ],
-                data: [
-                    0.1,
-                    1.3,
-                    53.02,
-                    1.4,
-                    0.88,
-                    0.56,
-                    0.45,
-                    0.49,
-                    0.32,
-                    0.29,
-                    0.79,
-                    0.18,
-                    0.13,
-                    2.16,
-                    0.13,
-                    0.11,
-                    0.17,
-                    0.26
-                ]
-            }
-        },
-        {
-            y: 10.57,
-            color: colors[1],
-            drilldown: {
-                name: 'Firefox',
-                categories: [
-                    'Firefox v58.0',
-                    'Firefox v57.0',
-                    'Firefox v56.0',
-                    'Firefox v55.0',
-                    'Firefox v54.0',
-                    'Firefox v52.0',
-                    'Firefox v51.0',
-                    'Firefox v50.0',
-                    'Firefox v48.0',
-                    'Firefox v47.0'
-                ],
-                data: [
-                    1.02,
-                    7.36,
-                    0.35,
-                    0.11,
-                    0.1,
-                    0.95,
-                    0.15,
-                    0.1,
-                    0.31,
-                    0.12
-                ]
-            }
-        },
-        {
-            y: 7.23,
-            color: colors[0],
-            drilldown: {
-                name: 'Internet Explorer',
-                categories: [
-                    'Internet Explorer v11.0',
-                    'Internet Explorer v10.0',
-                    'Internet Explorer v9.0',
-                    'Internet Explorer v8.0'
-                ],
-                data: [
-                    6.2,
-                    0.29,
-                    0.27,
-                    0.47
-                ]
-            }
-        },
-        {
-            y: 5.58,
-            color: colors[3],
-            drilldown: {
-                name: 'Safari',
-                categories: [
-                    'Safari v11.0',
-                    'Safari v10.1',
-                    'Safari v10.0',
-                    'Safari v9.1',
-                    'Safari v9.0',
-                    'Safari v5.1'
-                ],
-                data: [
-                    3.39,
-                    0.96,
-                    0.36,
-                    0.54,
-                    0.13,
-                    0.2
-                ]
-            }
-        },
-        {
-            y: 4.02,
-            color: colors[5],
-            drilldown: {
-                name: 'Edge',
-                categories: [
-                    'Edge v16',
-                    'Edge v15',
-                    'Edge v14',
-                    'Edge v13'
-                ],
-                data: [
-                    2.6,
-                    0.92,
-                    0.4,
-                    0.1
-                ]
-            }
-        },
-        {
-            y: 1.92,
-            color: colors[4],
-            drilldown: {
-                name: 'Opera',
-                categories: [
-                    'Opera v50.0',
-                    'Opera v49.0',
-                    'Opera v12.1'
-                ],
-                data: [
-                    0.96,
-                    0.82,
-                    0.14
-                ]
-            }
-        },
-        {
-            y: 7.62,
-            color: colors[6],
-            drilldown: {
-                name: 'Other',
-                categories: [
-                    'Other'
-                ],
-                data: [
-                    7.62
-                ]
-            }
-        }
-    ],
-    browserData = [],
-    versionsData = [],
-    i,
-    j,
-    dataLen = data.length,
-    drillDataLen,
-    brightness;
 
 
-// Build the data arrays
-for (i = 0; i < dataLen; i += 1) {
-
-    // add browser data
-    browserData.push({
-        name: categories[i],
-        y: data[i].y,
-        color: data[i].color
-    });
-
-    // add version data
-    drillDataLen = data[i].drilldown.data.length;
-    for (j = 0; j < drillDataLen; j += 1) {
-        brightness = 0.2 - (j / drillDataLen) / 5;
-        versionsData.push({
-            name: data[i].drilldown.categories[j],
-            y: data[i].drilldown.data[j],
-            color: Highcharts.color(data[i].color).brighten(brightness).get()
-        });
-    }
-}
-
-// Create the chart
-Highcharts.chart('container2', {
+Highcharts.chart('temperature-area-chart', {
     chart: {
-        type: 'pie'
+        type: 'areaspline'
     },
     title: {
-        text: 'Browser market share, January, 2018'
+        text: 'Pump temperature over the week'
     },
-    subtitle: {
-        text: 'Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+    legend: {
+        layout: 'vertical',
+        align: 'left',
+        verticalAlign: 'top',
+        x: 150,
+        y: 100,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF'
     },
-    plotOptions: {
-        pie: {
-            shadow: false,
-            center: ['50%', '50%']
+    xAxis: {
+        categories: [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+            'Sunday'
+        ],
+        // plotBands: [{ // visualize the weekend
+        //     from: 4.5,
+        //     to: 6.5,
+        //     color: 'rgba(68, 170, 213, .2)'
+        // }]
+    },
+    yAxis: {
+        title: {
+            text: 'Temperature Celcius'
         }
     },
     tooltip: {
-        valueSuffix: '%'
+        shared: true,
+        valueSuffix: ' units'
+    },
+    credits: {
+        enabled: false
+    },
+    plotOptions: {
+        areaspline: {
+            fillOpacity: 0.5
+        }
     },
     series: [{
-        name: 'Browsers',
-        data: browserData,
-        size: '60%',
-        dataLabels: {
-            formatter: function () {
-                return this.y > 5 ? this.point.name : null;
-            },
-            color: '#ffffff',
-            distance: -30
-        }
+        name: 'T1',
+        data: [5.1, 5, 5, 5.1, 5.2, 5.1, 5]
     }, {
-        name: 'Versions',
-        data: versionsData,
-        size: '80%',
-        innerSize: '60%',
-        dataLabels: {
-            formatter: function () {
-                // display only if larger than 1
-                return this.y > 1 ? '<b>' + this.point.name + ':</b> ' +
-                    this.y + '%' : null;
-            }
-        },
-        id: 'versions'
-    }],
-    responsive: {
-        rules: [{
-            condition: {
-                maxWidth: 400
-            },
-            chartOptions: {
-                series: [{
-                }, {
-                    id: 'versions',
-                    dataLabels: {
-                        enabled: false
-                    }
-                }]
-            }
-        }]
-    }
-});
-
-
-
-Highcharts.chart('container3', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
+        name: 'T2',
+        data: [20, 19.9, 20.1, 21, 18, 19, 20]
     },
-    title: {
-        text: 'Browser market shares in January, 2018'
+    {
+        name: 'T3',
+        data: [19, 20, 21, 19, 20, 18, 19]
     },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    {
+        name: 'T4',
+        data: [21, 21,19, 21, 20, 21, 21]
     },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
-        }
+    {
+        name: 'Dew Poin Temp',
+        data: [6.7, 6.7, 6.8, 6.8, 6.7, 6.5, 6.5]
     },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                distance: -30,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-            }
-        }
+    {
+        name: 'Sec Flow',
+        data: [21, 20, 20, 20, 21, 22, 21]
     },
-    series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Chrome',
-            y: 61.41,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Internet Explorer',
-            y: 11.84
-        }, {
-            name: 'Firefox',
-            y: 10.85
-        }, {
-            name: 'Edge',
-            y: 4.67
-        }, {
-            name: 'Safari',
-            y: 4.18
-        }, {
-            name: 'Sogou Explorer',
-            y: 1.64
-        }, {
-            name: 'Opera',
-            y: 1.6
-        }, {
-            name: 'QQ',
-            y: 1.2
-        }, {
-            name: 'Other',
-            y: 2.61
-        }]
+    {
+        name: 'Pump Avg Speed',
+        data: [54, 55, 54, 55, 55, 55, 55]
+    },
+    {
+        name: 'Valve Demand',
+        data: [28, 25, 23, 22, 25, 26, 22]
     }]
 });
 
 
-// Build the chart
-Highcharts.chart('container4', {
+Highcharts.chart('speed', {
     chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
+        type: 'column'
     },
     title: {
-        text: 'Browser market shares in January, 2018'
+        text: 'Pump1 Speed distribution'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'RPM'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: '{point.y:.1f} %</b>'
+    },
+    series: [{
+        name: 'Population',
+        data: [
+            ['100', 24.2],
+            ['200', 20.8],
+            ['300', 14.9],
+            ['400', 13.7],
+            ['500', 13.1],
+            ['600', 12.7],
+            ['700', 12.4],
+            ['800', 12.2],
+            ['900', 12.0],
+            ['1000', 11.7],
+            ['1100', 11.5],
+            ['1200', 11.2],
+            ['1300', 11.1],
+            ['1400', 10.6],
+            ['1500', 10.6],
+            ['1600', 10.6],
+            ['1700', 10.3],
+            ['1800', 9.8],
+            ['1900', 9.3],
+            ['2000', 9.3]
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+
+
+Highcharts.chart('speed-pie', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
+    },
+    title: {
+        text: 'Pump 2 %',
+        
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -362,37 +174,31 @@ Highcharts.chart('container4', {
     },
     plotOptions: {
         pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
             dataLabels: {
-                enabled: false
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
             },
-            showInLegend: true
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
         }
     },
     series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Chrome',
-            y: 61.41,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Internet Explorer',
-            y: 11.84
-        }, {
-            name: 'Firefox',
-            y: 10.85
-        }, {
-            name: 'Edge',
-            y: 4.67
-        }, {
-            name: 'Safari',
-            y: 4.18
-        }, {
-            name: 'Other',
-            y: 7.05
-        }]
+        type: 'pie',
+        name: 'Browser share',
+        innerSize: '50%',
+        data: [
+            ['100', 58.9],
+            ['200', 13.29],
+            ['300', 13],
+            ['400', 3.78],
+            ['500', 3.42],
+            
+        ]
     }]
 });

@@ -417,8 +417,8 @@
                       <div class="row pt-15">
                         
                         <div class="col-md-6 p-0 text-right pressure-val"><span class="pressure-val-container"><span class="pump-num">P1</span> <span data-toggle="counter" data-end="60" class="number">0</span></span></div>
-                        <div class="col-md-6 p-0 text-right pressure-val"><span class="pressure-val-container"><span class="pump-num">P2</span> <span data-toggle="counter" data-end="60" class="number">0</span></span></div>
-                        <div class="col-md-6 p-0 text-right pressure-val"><span class="pressure-val-container"><span class="pump-num">P3</span> <span data-toggle="counter" data-end="60" class="number">0</span></span></div>
+                        <div class="col-md-6 p-0 text-right pressure-val"><span class="pressure-val-container"><span class="pump-num">P2</span> <span data-toggle="counter" data-end="40" class="number">0</span></span></div>
+                        <div class="col-md-6 p-0 text-right pressure-val"><span class="pressure-val-container"><span class="pump-num">P3</span> <span data-toggle="counter" data-end="55" class="number">0</span></span></div>
                         <div class="col-md-6 p-0 text-right pressure-val"><span class="pressure-val-container"><span class="pump-num">P4</span> <span data-toggle="counter" data-end="60" class="number">0</span></span></div>
                       </div>
 
@@ -491,19 +491,10 @@
                       </div>
                     </div><span class="icon mdi mdi-chevron-down"></span><span class="icon toggle-loading mdi mdi-refresh-sync"></span><span class="icon mdi mdi-close"></span>
                   </div>
-                  <div class="button-toolbar d-none d-md-block">
-                    <div class="btn-group">
-                      <button class="btn btn-secondary" type="button">Week</button>
-                      <button class="btn btn-secondary active" type="button">Month</button>
-                      <button class="btn btn-secondary" type="button">Year</button>
-                    </div>
-                    <div class="btn-group">
-                      <button class="btn btn-secondary" type="button">Today</button>
-                    </div>
-                  </div><span class="title">Recent Movement</span>
+                  <span class="title">Temperature Overview</span>
                 </div>
                 <div class="widget-chart-container">
-                  <div class="widget-chart-info">
+                  <!-- <div class="widget-chart-info">
                     <ul class="chart-legend-horizontal">
                       <li><span data-color="main-chart-color1"></span> T1</li>
                       <li><span data-color="main-chart-color2"></span> T2</li>
@@ -511,8 +502,19 @@
                       <li><span data-color="main-chart-color3"></span> T4</li>
                       <li><span data-color="main-chart-color3"></span> Dew Point</li>
                     </ul>
-                  </div>
-                  <div class="widget-counter-group widget-counter-group-right">
+                  </div> -->
+                  <div class="widget-counter-group widget-counter-group-right pt-15">
+                    <div class="button-toolbar d-none d-md-block float-left">
+                      <div class="btn-group">
+                        <button class="btn btn-secondary active" type="button">Week</button>
+                        <button class="btn btn-secondary " type="button">Month</button>
+                        <button class="btn btn-secondary" type="button">Year</button>
+                      </div>
+                      <div class="btn-group">
+                        <button class="btn btn-secondary" type="button">Today</button>
+                      </div>
+                    </div>
+
                     <div class="counter counter-big">
                       <div class="value">35% <span class="mdi mdi-long-arrow-up text-success"></span></div>
                       <div class="desc">Efficiency</div>
@@ -526,7 +528,7 @@
                       <div class="desc"> Down Time</div>
                     </div>
                   </div>
-                  <div id="container" style="width:100%; height:400px;"></div>
+                  <div id="temperature-area-chart" style="width:100%; height:400px;"></div>
                 </div>
                 <div class="be-spinner">
                   <svg width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -539,31 +541,21 @@
 
           <div class="row pump-rpm-section">
             
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="widget">
                   
                   <div class="widget-chart-container">
-                    <div width="100%" id="container3"></div>
+                    <div width="100%" id="speed"></div>
                   </div>
                 </div>
             </div>
 
 
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="widget">
                   
                   <div class="widget-chart-container">
-                    <div id="container2"></div>
-                  </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4">
-                <div class="widget">
-                  
-                  <div class="widget-chart-container">
-                    <div id="container4"></div>
+                    <div id="speed-pie"></div>
                   </div>
                 </div>
             </div>
