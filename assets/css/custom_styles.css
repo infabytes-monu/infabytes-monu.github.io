@@ -3,6 +3,7 @@
     position: relative !important;
     table-layout: unset !important;
     padding-bottom: 5px;
+    padding-top: 10px;
 }
 
 .widget.has-heading
@@ -84,4 +85,76 @@
 .pump-rpm-section
 {
     margin-bottom: 50px;
+}
+
+.avg-value
+{
+    background: url('../img/icons/avg.svg') no-repeat;
+    background-position: 0px 3px;
+    margin-top: 10px;
+    font-size: 20px;
+    padding-left: 25px;
+}
+
+.avg-value.no-bg
+{
+    background: none !important;
+}
+
+.box-heading
+{
+    margin-bottom: 5px;
+}
+
+.mb-20
+{
+    margin-bottom: 20px;
+}
+
+.p-25
+{
+    padding: 25px;
+}
+
+.pressure-val
+{
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.pump-num
+{
+    background: #0D91BD;
+    color: #f8f8f8;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    line-height: 25px;
+    font-size: 13px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    top: -3px;
+}
+
+.pressure-val-container
+{
+    border: 1px solid #7d7d7d;
+    border-radius: 25px;
+    padding-right: 10px;
+    background: #ffb6558c;
+    margin-right: 5px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.pt-15
+{
+    padding-top: 15px;
+}
+
+.pressure-val-container .number
+{
+    font-size: 15px;
+    font-weight: bold;
 }
