@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="assets/lib/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
     <link rel="stylesheet" href="assets/css/app.css" type="text/css"/>
     <link rel="stylesheet" href="assets/css/custom_styles.css" type="text/css"/>
+
+    <link rel="stylesheet" href="assets/css/circuit.css" type="text/css"/>
   </head>
   <body>
     <div class="be-wrapper be-fixed-sidebar">
@@ -102,8 +104,8 @@
               <div class="left-sidebar-content">
                 <ul class="sidebar-elements">
                   <li class="divider">Menu</li>
-                  <li class="active"><a href="index.html"><i class="icon mdi mdi-home"></i><span>Dashboard</span></a></li>
-                  <li><a href="circuit.html"><i class="icon mdi mdi-swap-alt"></i><span>Circuit</span></a></li>
+                  <li><a href="index.html"><i class="icon mdi mdi-home"></i><span>Dashboard</span></a></li>
+                  <li class="active"><a href="circuit.html"><i class="icon mdi mdi-swap-alt"></i><span>Circuit</span></a></li>
                   <li class="parent"><a href="#"><i class="icon mdi mdi-face"></i><span>UI Elements</span></a>
                     <ul class="sub-menu">
                       <li><a href="ui-alerts.html">Alerts</a>
@@ -321,12 +323,12 @@
       </div>
       <div class="be-content">
         <div class="main-content container-fluid">
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-12 col-md-6 col-lg-3 col-xl-3">
 
                 
 
-                <div class="widget widget-tile top-box">
+                <div class="widget widget-tile">
 
 
                   <div class="row">
@@ -363,7 +365,7 @@
 
                 
 
-                <div class="widget widget-tile top-box">
+                <div class="widget widget-tile">
 
 
                   <div class="row">
@@ -400,14 +402,14 @@
 
                 
 
-              <div class="widget widget-tile top-box">
+              <div class="widget widget-tile">
 
 
                 <div class="row">
                   <div class="col-md-4 pr-0 ">
                     <div class="row">
-                      <div class="col-md-12 p-0 text-center box-heading">Pressure</div>
-                      <div class="col-md-12 text-center d-flex align-items-center"><div class="widget-img"><img class="scale-down" src="assets/img/icons/pressure.svg"></div></div>
+                      <div class="col-md-12 p-0 text-center box-heading">Avg Pressure</div>
+                      <div class="col-md-12 text-center d-flex align-items-center"><div class="widget-img"><img src="assets/img/icons/pressure.svg"></div></div>
                     </div>
                     
                   </div>
@@ -439,14 +441,14 @@
 
                 
 
-              <div class="widget widget-tile top-box">
+              <div class="widget widget-tile">
 
 
                 <div class="row">
                   <div class="col-md-4 pr-0 ">
                     <div class="row">
                       <div class="col-md-12 p-0 text-center box-heading">Alarms</div>
-                      <div class="col-md-12 p-20 text-center d-flex align-items-center"><div class="widget-img"><img class="scale-down" src="assets/img/icons/alert2.svg"></div></div>
+                      <div class="col-md-12 p-20 text-center d-flex align-items-center"><div class="widget-img"><img src="assets/img/icons/alert.svg"></div></div>
                     </div>
                     
                   </div>
@@ -477,58 +479,54 @@
               </div>
             </div>
             
-          </div>
+          </div> -->
           
 
           <div class="row">
             <div class="col-md-12">
               <div class="widget widget-fullwidth be-loading">
                 <div class="widget-head">
-                  <div class="tools">
-                    <div class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="icon mdi mdi-more-vert d-inline-block d-md-none"></span></a>
-                      <div class="dropdown-menu" role="menu"><a class="dropdown-item" href="#">Week</a><a class="dropdown-item" href="#">Month</a><a class="dropdown-item" href="#">Year</a>
-                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Today</a>
-                      </div>
-                    </div><span class="icon mdi mdi-chevron-down"></span><span class="icon toggle-loading mdi mdi-refresh-sync"></span><span class="icon mdi mdi-close"></span>
-                  </div>
-                  <span class="title">Temperature Overview</span>
+                  
+                  <span class="title">CD6C Status</span>
                 </div>
                 <div class="widget-chart-container">
-                  <!-- <div class="widget-chart-info">
-                    <ul class="chart-legend-horizontal">
-                      <li><span data-color="main-chart-color1"></span> T1</li>
-                      <li><span data-color="main-chart-color2"></span> T2</li>
-                      <li><span data-color="main-chart-color3"></span> T3</li>
-                      <li><span data-color="main-chart-color3"></span> T4</li>
-                      <li><span data-color="main-chart-color3"></span> Dew Point</li>
-                    </ul>
-                  </div> -->
-                  <div class="widget-counter-group widget-counter-group-left pt-15">
-                    <div class="button-toolbar d-none d-md-block float-right">
-                      <div class="btn-group">
-                        <button class="btn btn-secondary active" type="button">Week</button>
-                        <button class="btn btn-secondary " type="button">Month</button>
-                        <button class="btn btn-secondary" type="button">Year</button>
-                      </div>
-                      <div class="btn-group">
-                        <button class="btn btn-secondary" type="button">Today</button>
-                      </div>
-                    </div>
-
-                    <div class="counter counter-big">
-                      <div class="value">35% <span class="mdi mdi-long-arrow-up text-success"></span></div>
-                      <div class="desc">Efficiency</div>
-                    </div>
-                    <div class="counter counter-big">
-                      <div class="value">10% <span class="mdi mdi-long-arrow-down text-success"></span></div>
-                      <div class="desc">C0<sub>2</sub></div>
-                    </div>
-                    <div class="counter counter-big">
-                      <div class="value">1% <span class="mdi mdi-long-arrow-down text-success"></span></div>
-                      <div class="desc"> Down Time</div>
-                    </div>
+                  
+                
+                  <div class="contentcentre2">
+                    
+                       <div class="anchorPos"> 
+                       <div class="primflowPos"> <span id="primflow"> <label> </label></span></div>
+                    <div class="t1Pos"> <span id="t1"> <label> </label></span></div>
+                    <div class="t2Pos"> <span id="t2"> <label> </label></span></div>
+                    <div class="t2aPos"> <span id="t2a"> <label> </label></span></div>
+                    <div class="t2bPos"> <span id="t2b"> <label> </label></span></div>
+                    <div class="t3Pos"> <span id="t3"> <label> </label></span></div>
+                    <div class="t4Pos"> <span id="t4"> <label> </label></span></div>
+    
+                       <div class="dwPos"> <span id="dw"> <label> </label></span></div>
+                    <div class="rhPos"> <span id="rh"> <label> </label></span></div>
+                    
+                    <div class="ps3Pos"> <span id="ps3"> <label> </label></span></div>
+                    <div class="ps4Pos"> <span id="ps4"> <label> </label></span></div>
+                    <div class="pdpPos"> <span id="pdp"> <label> </label></span></div>
+                    
+                    <div class="secflowPos"> <span id="secflow"> <label> </label></span></div>
+                    <div class="dutyPos"> <span id="duty"> <label> </label></span></div>
+                    <div class="ps1Pos"> <span id="ps1"><label> </label></span></div>
+                    <div class="sdpPos"> <span id="sdp"><label> </label></span></div>
+                    <div class="pumpspeedPos"> <span id="pumpspeed"> <label> </label></span></div>
+                    <div class="pumpindexPos"> <span id="pumpindex"> <label> </label></span></div>
+                    <div class="valvePos"> <span id="valve"> <label> </label></span></div>
+                    <div class="modeLabelPos"> <label>Mode</label></div>
+                    <div class="modePos"> <span id="mode"> <label> </label></span></div>
+                    <div class="alarmsLabelPos"> <label>Alarms  </label></div>
+                    <div class="alarmsPos"> <span id="numalarms"> <label> </label></span></div>
+                    <div class="warningsLabelPos"> <label>Warnings </label></div>
+                    <div class="warningsPos"> <span id="numwarnings"> <label> </label></span></div>
+                    <div class="ps2Pos"> <span id="ps2"><label> </label></span></div>
+    
                   </div>
-                  <div id="temperature-area-chart" style="width:100%; height:400px;"></div>
+                  </div>
                 </div>
                 <div class="be-spinner">
                   <svg width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -539,130 +537,53 @@
             </div>
           </div>
 
-          <div class="row pump-rpm-section">
-            
-            <div class="col-lg-6">
-                <div class="widget">
+          
+          <div class="row ">
+            <div class="col-12 col-lg-4">
+              <div class="card speedo-card">
+                <div class="card-header card-header-divider pb-3">Pump Speed</div>
+                <div class="card-body pt-5">
                   
-                  <div class="widget-chart-container">
-                    <div width="100%" id="speed"></div>
-                  </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-6">
-                <div class="widget">
                   
-                  <div class="widget-chart-container">
-                    <div id="speed-pie"></div>
-                  </div>
-                </div>
-            </div>
-
-            
-
-
-
-            
-          </div>
-
-          <div class="row">
-            <div class="col-12 col-lg-6">
-              <div class="card card-table">
-                <div class="card-header card-header-divider">
+                  <figure class="highcharts-figure"><div id="container-speed" class="chart-container"></div> </figure>
                   
-                  <div class="title">Events & Alarm</div>
-                </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-striped table-borderless">
-                    <thead>
-                      <tr>
-                        <th style="width:20%;">Type</th>
-                        <th style="width: 50%;">Description</th>
-                        <th style="width:30%;">Date</th>
-                        
-                        
-                      </tr>
-                    </thead>
-                    <tbody class="no-border-x">
-                      <tr>
-                        <td>A26</td>
-                        <td>Moisture decreased</td>
-                        <td>Aug 23, 2018</td>
-                        
-                        
-                      </tr>
-                      <tr>
-                        <td>A27</td>
-                        <td>System Power down</td>
-                        <td>Aug 23, 2018</td>
-                        
-                        
-                      </tr>
-                      <tr>
-                        <td>I01</td>
-                        <td>System power up</td>
-                        <td>Aug 23, 2018</td>
-                        
-                        
-                      </tr>
-                      <tr>
-                        <td>N59</td>
-                        <td>Network comms failure</td>
-                        <td>Aug 23, 2018</td>
-                        
-                        
-                      </tr>
-                      
-                    </tbody>
-                  </table>
+                  
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="card card-table">
-                <div class="card-header card-header-divider">
+            
+
+            <div class="col-12 col-lg-4">
+              <div class="card speedo-card">
+                <div class="card-header card-header-divider pb-3">Valve Feedback</div>
+                <div class="card-body pt-5">
                   
-                  <div class="title">Active</div>
+                  
+                  <figure class="highcharts-figure"><div id="container-rpm" class="chart-container"></div></figure>
+                  
+                  
                 </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-striped table-hover">
-                    <thead>
-                      <tr>
-                        <th style="width:30%;">Type</th>
-                        <th style="width: 40%;">Description</th>
-                        <th style="width:30%;">Date</th>
-                        
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                      
-                      <tr>
-                        <td class="user-avatar"> <img src="assets/img/avatar4.png" alt="Avatar">Engineer</td>
-                        <td>Logged In</td>
-                        <td>Jul 15, 2018</td>
-                        
-                      </tr>
-                      <tr>
-                        <td class="user-avatar"> <img src="assets/img/avatar5.png" alt="Avatar">E-mail</td>
-                        <td>A20 System low pressure<br>E-mail sent to Paul</td>
-                        <td>Jul 28, 2018</td>
-                        
-                      </tr>
-                      <tr>
-                        <td class="user-avatar"> <img src="assets/img/avatar3.png" alt="Avatar">SMS</td>
-                        <td>A26 Master updated<br>SMS sent to Engineer</td>
-                        <td>Jun 30, 2018</td>
-                        
-                      </tr>
-                    </tbody>
-                  </table>
+
+                <div style="clear: both;"></div>
+              </div>
+            </div>
+
+
+            <div class="col-12 col-lg-4">
+              <div class="card speedo-card">
+                <div class="card-header card-header-divider pb-3">Efficiency</div>
+                <div class="card-body pt-5">
+                  
+                  
+                  <figure class="highcharts-figure"><div id="container-efficiency" class="chart-container"></div></figure>
+                  
+                  
                 </div>
               </div>
             </div>
+            
           </div>
+          
           
           
         </div>
@@ -890,101 +811,16 @@
     <script src="assets/js/app-charts-morris.js" type="text/javascript"></script>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
     <script src="assets/js/app-dashboard.js" type="text/javascript"></script>
 
-    <script src="assets/js/highcharts-pie.js" type="text/javascript"></script>
+    <script src="assets/js/circuit.js" type="text/javascript"></script>
 
-    <script type="text/javascript">
-      $(document).ready(function(){
-      	//-initialize the javascript
-      	App.init();
-      	App.dashboard();
-      
-      });
-
-      Highcharts.chart('container', {
-    chart: {
-        type: 'area'
-    },
-    accessibility: {
-        description: 'Image description: An area chart compares the nuclear stockpiles of the USA and the USSR/Russia between 1945 and 2017. The number of nuclear weapons is plotted on the Y-axis and the years on the X-axis. The chart is interactive, and the year-on-year stockpile levels can be traced for each country. The US has a stockpile of 6 nuclear weapons at the dawn of the nuclear age in 1945. This number has gradually increased to 369 by 1950 when the USSR enters the arms race with 6 weapons. At this point, the US starts to rapidly build its stockpile culminating in 32,040 warheads by 1966 compared to the USSR’s 7,089. From this peak in 1966, the US stockpile gradually decreases as the USSR’s stockpile expands. By 1978 the USSR has closed the nuclear gap at 25,393. The USSR stockpile continues to grow until it reaches a peak of 45,000 in 1986 compared to the US arsenal of 24,401. From 1986, the nuclear stockpiles of both countries start to fall. By 2000, the numbers have fallen to 10,577 and 21,000 for the US and Russia, respectively. The decreases continue until 2017 at which point the US holds 4,018 weapons compared to Russia’s 4,500.'
-    },
-    title: {
-        text: 'US and USSR nuclear stockpiles'
-    },
-    subtitle: {
-        text: 'Sources: <a href="https://thebulletin.org/2006/july/global-nuclear-stockpiles-1945-2006">' +
-            'thebulletin.org</a> &amp; <a href="https://www.armscontrol.org/factsheets/Nuclearweaponswhohaswhat">' +
-            'armscontrol.org</a>'
-    },
-    xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        },
-        accessibility: {
-            rangeDescription: 'Range: 1940 to 2018.'
-        }
-    },
-    yAxis: {
-        title: {
-            text: 'Nuclear weapon states'
-        },
-        labels: {
-            formatter: function () {
-                return this.value / 1000 + 'k';
-            }
-        }
-    },
-    tooltip: {
-        pointFormat: '{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
-    },
-    plotOptions: {
-        area: {
-            pointStart: 1940,
-            marker: {
-                enabled: false,
-                symbol: 'circle',
-                radius: 2,
-                states: {
-                    hover: {
-                        enabled: true
-                    }
-                }
-            }
-        }
-    },
-    series: [{
-        name: 'USA',
-        data: [
-            null, null, null, null, null, 6, 11, 32, 110, 235,
-            369, 640, 1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468,
-            20434, 24126, 27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342,
-            26662, 26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-            24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586, 22380,
-            21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950, 10871, 10824,
-            10577, 10527, 10475, 10421, 10358, 10295, 10104, 9914, 9620, 9326,
-            5113, 5113, 4954, 4804, 4761, 4717, 4368, 4018
-        ]
-    }, {
-        name: 'USSR/Russia',
-        data: [null, null, null, null, null, null, null, null, null, null,
-            5, 25, 50, 120, 150, 200, 426, 660, 869, 1060,
-            1605, 2471, 3322, 4238, 5221, 6129, 7089, 8339, 9399, 10538,
-            11643, 13092, 14478, 15915, 17385, 19055, 21205, 23044, 25393, 27935,
-            30062, 32049, 33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000,
-            37000, 35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-            21000, 20000, 19000, 18000, 18000, 17000, 16000, 15537, 14162, 12787,
-            12600, 11400, 5500, 4512, 4502, 4502, 4500, 4500
-        ]
-    }]
-});
-    </script>
+   
   </body>
 </html>

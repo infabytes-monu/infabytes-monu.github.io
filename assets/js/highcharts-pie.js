@@ -85,7 +85,28 @@ Highcharts.chart('temperature-area-chart', {
 });
 
 
-Highcharts.chart('speed', {
+data_speed = [['100', 24.2],
+['200', 20.8],
+['300', 14.9],
+['400', 13.7],
+['500', 13.1],
+['600', 12.7],
+['700', 12.4],
+['800', 12.2],
+['900', 12.0],
+['1000', 11.7],
+['1100', 11.5],
+['1200', 11.2],
+['1300', 11.1],
+['1400', 10.6],
+['1500', 10.6],
+['1600', 10.6],
+['1700', 10.3],
+['1800', 9.8],
+['1900', 9.3],
+['2000', 9.3]];
+
+speed_bar = Highcharts.chart('speed', {
     chart: {
         type: 'column'
     },
@@ -94,6 +115,9 @@ Highcharts.chart('speed', {
     },
     xAxis: {
         type: 'category',
+        title: {
+            text: 'RPM'
+        },
         labels: {
             rotation: -45,
             style: {
@@ -105,7 +129,7 @@ Highcharts.chart('speed', {
     yAxis: {
         min: 0,
         title: {
-            text: 'RPM'
+            text: 'Time'
         }
     },
     legend: {
@@ -116,28 +140,7 @@ Highcharts.chart('speed', {
     },
     series: [{
         name: 'Population',
-        data: [
-            ['100', 24.2],
-            ['200', 20.8],
-            ['300', 14.9],
-            ['400', 13.7],
-            ['500', 13.1],
-            ['600', 12.7],
-            ['700', 12.4],
-            ['800', 12.2],
-            ['900', 12.0],
-            ['1000', 11.7],
-            ['1100', 11.5],
-            ['1200', 11.2],
-            ['1300', 11.1],
-            ['1400', 10.6],
-            ['1500', 10.6],
-            ['1600', 10.6],
-            ['1700', 10.3],
-            ['1800', 9.8],
-            ['1900', 9.3],
-            ['2000', 9.3]
-        ],
+        data: data_speed,
         dataLabels: {
             enabled: true,
             rotation: -90,
@@ -153,8 +156,9 @@ Highcharts.chart('speed', {
     }]
 });
 
+speed_bar.series[0].addPoint(['600', 50], true, false);
 
-Highcharts.chart('speed-pie', {
+semipie=Highcharts.chart('speed-pie', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
@@ -195,10 +199,16 @@ Highcharts.chart('speed-pie', {
         data: [
             ['100', 58.9],
             ['200', 13.29],
-            ['300', 13],
+            ['300', 10],
             ['400', 3.78],
             ['500', 3.43],
             
         ]
     }]
 });
+
+semipie.series[0].addPoint(['600', 3], true, false);
+
+
+
+
