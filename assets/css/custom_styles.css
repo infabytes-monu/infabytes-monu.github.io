@@ -171,10 +171,52 @@
 
 .scale-down
 {
-    transform: scale(0.8);
+    transform: scale(0.85);
+    transform-origin: top left;
 }
 
 .top-box .box-heading
 {
     font-size: 17px;
+}
+
+.pb-30
+{
+    padding-bottom: 30px !important;
+}
+
+div.tick
+{
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    background: red;
+}
+
+.chart-legend-horizontal li
+{
+    position: relative;
+}
+
+.chart-legend-horizontal li span
+{
+    background: #c1c1c1;
+}
+
+.chart-legend-horizontal li
+{
+    cursor: pointer;
+}
+
+.chart-legend-horizontal li:hover
+{
+    color: #4285f4;
+}
+
+#temperature-area-chart
+{
+    overflow: unset !important;
 }
