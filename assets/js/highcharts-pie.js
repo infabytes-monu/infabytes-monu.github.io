@@ -174,6 +174,7 @@ speed_bar = Highcharts.chart('speed', {
 
 speed_bar.series[0].addPoint(['600', 50], true, false);
 
+/*
 semipie=Highcharts.chart('speed-pie', {
     chart: {
         plotBackgroundColor: null,
@@ -226,7 +227,7 @@ semipie=Highcharts.chart('speed-pie', {
 semipie.series[0].addPoint(['600', 3], true, false);
 
 
-
+*/
 
 $('.area-chart-toggle').click(function(){
     
@@ -291,7 +292,48 @@ $('.area-chart-toggle').click(function(){
             ]);
         }
     }
-    
+});
 
-    
+// Create the chart
+speed_pie = new Highcharts.Chart({
+    chart: {
+        renderTo: 'speed-pie',
+        type: 'pie'
+    },
+    title: {
+        text: 'Speed distribution',
+        verticalAlign: 'middle',
+       
+    },
+    yAxis: {
+        title: {
+            text: 'Total percent market share'
+        },
+        
+    },
+    plotOptions: {
+        pie: {
+            shadow: false,
+            dataLabels: {
+                enabled: true,
+                distance: -60
+            }
+        }
+    },
+    tooltip: {
+        formatter: function() {
+            return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+        }
+    },
+    series: [{
+        name: 'Browsers',
+        data: [["Firefox",6],["MSIE",4],["Chrome",7]],
+        size: '100%',
+        innerSize: '70%',
+        showInLegend:true,
+        dataLabels: {
+            enabled: true,
+            distance: -30
+        }
+    }]
 });

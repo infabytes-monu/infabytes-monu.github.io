@@ -220,3 +220,35 @@ div.tick
 {
     overflow: unset !important;
 }
+
+.be-content
+{
+    margin-left: 0px;
+}
+
+.go-back-btn-icon
+{
+    font-size: 17px;
+    vertical-align: middle;
+    margin: 0px 5px;
+    position: relative;
+    top: -1px;
+}
+
+.px-15
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.anchorPos label, .anchorPos .pumpindex
+{
+    position: relative;
+    top: -2px;
+}
+
+.go-back-btn
+{
+    position: relative;
+    top: -50px;
+}
